@@ -22,6 +22,56 @@ include("./bd.php")
     <!-- place navbar here -->
   </header>
   <main>
+    
+      <!--bs5-grid-defauld-->
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <!--Esta parte está bacía en la otra 
+            parte es que va el login, este bs5 dividío 
+          las vistas en dos columnas esta es la vacía y la otra
+        tiene el login-->
+          </div>
+          <div class="col-4">
+            <!--Esta es la otra columna y aquí va el login-->
+          <!--- bs5-card-head-foot-->
+            <div class="card">
+              <div class="card-header">
+                Login
+              </div>
+              <div class="card-body">
+                
+              <!--form post-->
+                <form action="" method="post">
+                  
+                <!--bs5-form-input-->
+                  <div class="mb-3">
+                    <label for="usuario" class="form-label">Usuario</label>
+                    <input type="text"
+                      class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="">
+                    
+                  </div>
+                  <!--bs5-form-input-->
+                  <div class="mb-3">
+                    <label for="contrasenia" class="form-label">Contraseña</label>
+                    <input type="password"
+                      class="form-control" name="contrasenia" id="contrasenia" aria-describedby="helpId" placeholder="">
+                  </div>
+
+                  <!--bs5-button-a-->
+                  <a name="" id="" class="btn btn-primary" href="index.php" role="button">Entrar</a>
+                </form>
+
+              </div>
+              <div class="card-footer text-muted">
+                <!--parte vacío del footer-->
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+      </div>
 
   </main>
   <footer>
