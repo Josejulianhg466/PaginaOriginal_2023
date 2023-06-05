@@ -7,7 +7,6 @@ Listar servicios
 <div class="card">
     <div class="card-header">
     <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar registro</a>    
-    SERVICIOS
     </div>
     <div class="card-body">
 
