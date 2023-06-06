@@ -19,6 +19,8 @@ if($_POST){
     $sentencia->bindParam(":descripcion",$descripcion);
 
     $sentencia->execute();
+    $mensaje="Registro agregado con exito!!";
+    header("Location:index.php?mensaje=".$mensaje);
 }
 include("../../templates/header.php");
 ?>
