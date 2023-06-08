@@ -3,27 +3,25 @@
 include("../../bd.php");
 
 if(isset($_GET['txtID'])){
+    $txtID = $_GET['txtID'];
 
-    $txtID=(isset($_GET['txtID']))?$_GET['txtID']:"";
-    $sentencia=$conexion->prepare("SELECT * FROM tbl_servicios WHERE id=:id ");
-    $sentencia->bindParam(":id",$txtID);
+    $sentencia = $conexion->prepare("SELECT * FROM tbl_servicios WHERE id=:id ");
+    $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
-    //recupera informacion el fetch obtiene los datos de la seleccion hecha y el LAZY recupera el registro
-    $registro=$sentencia->fetch(PDO::FETCH_LAZY);
+    $registro = $sentencia->fetch(PDO::FETCH_LAZY);
     
-    $icono=$registro['icono'];
-    $titulo=$registro['titulo'];
-    $descripcion=$registro['descripcion'];
+    $icono = $registro['icono'];
+    $titulo = $registro['titulo'];
+    $descripcion = $registro['descripcion'];
 }
-if($_POST){
-    print_r($_POST);
-    //todo lo de abajo es para actualizar la información
-    $txtID=(isset($_POST['$txtID']))?$_POST['$txtID']:"";
-    $icono=(isset($_POST['icono']))?$_POST['icono']:"";
-    $titulo=(isset($_POST['titulo']))?$_POST['titulo']:"";
-    $descripcion=(isset($_POST['descripcion']))?$_POST['descripcion']:"";
 
-    $sentencia=$conexion->prepare("UPDATE tbl_servicios  
+if($_POST){
+    $txtID = $_POST['txtID'];
+    $icono = $_POST['icono'];
+    $titulo = $_POST['titulo'];
+    $descripcion = $_POST['descripcion'];
+
+    $sentencia = $conexion->prepare("UPDATE tbl_servicios  
     SET 
     icono=:icono,
     titulo=:titulo, 
@@ -36,12 +34,12 @@ if($_POST){
     $sentencia->bindParam(":id",$txtID);
     $sentencia->execute();
 
-    $mensaje="Registro modificado con exito!!";
+    $mensaje = "Registro modificado con éxito!!";
     header("Location:index.php?mensaje=".$mensaje);
-
 }
 
-include("../../templates/header.php")?>
+include("../../templates/header.php");
+?>
 
 <!--bs5-card-head-footer-->
 <div class="card">
