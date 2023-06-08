@@ -25,9 +25,6 @@ if ($_POST) {
     $txtID = (isset($_POST['txtID'])) ? $_POST['txtID'] : "";
     $titulo = (isset($_POST['titulo'])) ? $_POST['titulo'] : "";
     $subtitulo = (isset($_POST["subtitulo"])) ? $_POST["subtitulo"] : "";
-
-
-
     $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"] : "";
     $cliente = (isset($_POST["cliente"])) ? $_POST["cliente"] : "";
     $categoria = (isset($_POST["categoria"])) ? $_POST["categoria"] : "";
@@ -75,16 +72,13 @@ if ($_POST) {
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     $registro_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
-
+    
     if(isset($registro_imagen["imagen"])){
-
         //elimina el archivo de la carpeta la imagen 
         if(file_exists("../../../assets/img/portfolio/".$registro_imagen["imagen"])){
             unlink("../../../assets/img/portfolio/".$registro_imagen["imagen"]);
         }
-
     }
-
         //actualizar img
         $sentencia = $conexion->prepare("UPDATE tbl_portafolio SET imagen=:imagen WHERE id=:id");
         echo "UPDATE tbl_portfolio SET imagen=:imagen WHERE id=:id ";
@@ -96,6 +90,7 @@ if ($_POST) {
         $sentencia->bindParam(":id", $txtID);
         $sentencia->execute();
     }
+
     $mensaje="Registro agregado con exito!!";
     header("Location:index.php?mensaje=".$mensaje);
 }
