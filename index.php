@@ -49,7 +49,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Academia Técnica de Fútbol</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -64,7 +64,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/cuervo.png" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -85,15 +85,15 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             <div class="container">
                 <div class="masthead-subheading"><?php echo $lista_configuraciones[0]['valor'];?></div>
                 <div class="masthead-heading text-uppercase"><?php echo $lista_configuraciones[1]['valor'];?></div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services"><?php echo $lista_configuraciones[3]['valor'];?></a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services"><?php echo $lista_configuraciones[2]['valor'];?></a>
             </div>
         </header>
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[4]['valor'];?></h2>
-                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[5]['valor'];?></h3>
+                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[3]['valor'];?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[4]['valor'];?></h3>
                 </div>
                 
                 <!--parte de manipulacion de servicios-->
@@ -116,8 +116,8 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[6]['valor'];?></h2>
-                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[7]['valor'];?></h3>
+                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[5]['valor'];?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[6]['valor'];?></h3>
                 </div>
                 <div class="row">
 
@@ -155,7 +155,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <ul class="list-inline">
                                         <li>
                                             <strong>Cliente:</strong>
-                                            <?php echo $registros["descripcion"];?>
+                                            <?php echo $registros["cliente"];?>
                                         </li>
                                         <li>
                                             <strong>Categoría:</strong>
@@ -185,8 +185,8 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[8]['valor'];?></h2>
-                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[9]['valor'];?></h3>
+                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[7]['valor'];?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[8]['valor'];?></h3>
                 </div>
                 <ul class="timeline">
                 
@@ -214,7 +214,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4></br>
-                            <?php echo $lista_configuraciones[10]['valor'];?>
+                            <?php echo $lista_configuraciones[9]['valor'];?>
                             </h4>
                         </div>
                     </li>
@@ -225,8 +225,8 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[11]['valor'];?></h2>
-                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[12]['valor'];?></h3>
+                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[10]['valor'];?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[11]['valor'];?></h3>
                 </div>
                 <div class="row">
                 <?php foreach ($lista_equipo as $registros) { ?>
@@ -250,8 +250,8 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[13]['valor'];?></h2>
-                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[14]['valor'];?></h3>
+                    <h2 class="section-heading text-uppercase"><?php echo $lista_configuraciones[12]['valor'];?></h2>
+                    <h3 class="section-subheading text-muted"><?php echo $lista_configuraciones[13]['valor'];?></h3>
                 </div>
 
             </div>
@@ -267,8 +267,7 @@ $lista_configuraciones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                       
                     </div>
                 </div>
             </div>

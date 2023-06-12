@@ -1,5 +1,36 @@
-<?php /*Conección a la base de datos */
-include("./bd.php")
+<?php
+session_start();
+include("./bd.php");
+// Declarar y asignar un valor predeterminado a $mensaje
+
+//$mensaje = "Error: El usuario o contraseña son incorrectos!!!"; 
+if ($_POST) {
+    
+    $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
+    $password = (isset($_POST["password"])) ? $_POST["password"] : "";
+    
+    // SELECCIONA AL USUARIO DESDE LA TABLA usuarios Y COMPRUEBA SI TANTO USUARIO Y CONTRASEÑA SON IGUALES
+    $sentencia = $conexion->prepare("SELECT *, count(*) as n_usuario 
+                  FROM `tbl_usuarios`
+                  WHERE usuario=:usuario
+                  AND password=:password");
+
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->bindParam(":password", $password);
+    $sentencia->execute();
+
+    // CONSULTA TODOS LOS DATOS QUE TENEMOS
+    $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
+    if ($lista_usuarios['n_usuario'] > 0) {
+        $mensaje = "El usuario y contraseña existen";
+        $_SESSION["usuario"] = $lista_usuarios['usuario'];
+        $_SESSION["logeado"] = true;
+        header("Location:index.php");
+        exit();
+    } else {
+        $mensaje = "Error: El usuario o contraseña son incorrectos!!!";
+    }
+}
 ?>
 
 <!doctype html> <!-- se colocó !bs5 para agregar config de bootstrap-->
@@ -35,6 +66,16 @@ include("./bd.php")
           <div class="col-4">
             <!--Esta es la otra columna y aquí va el login-->
           <!--- bs5-card-head-foot-->
+          </br>
+            </br>
+            <?php if(isset($mensaje)){ ?>
+            <!--alert danger closable-->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <strong><?php echo $mensaje;?></strong> 
+            </div>
+            <?php } ?>
+            
             <div class="card">
               <div class="card-header">
                 Login
@@ -55,11 +96,13 @@ include("./bd.php")
                   <div class="mb-3">
                     <label for="contrasenia" class="form-label">Contraseña</label>
                     <input type="password"
-                      class="form-control" name="contrasenia" id="contrasenia" aria-describedby="helpId" placeholder="">
+                      class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
                   </div>
 
-                  <!--bs5-button-a-->
-                  <a name="" id="" class="btn btn-primary" href="index.php" role="button">Entrar</a>
+                  <!--bs5-button-submit-->                
+                
+                 <input name="" id="" class="btn btn-primary" type="submit" value="Entrar">
+                
                 </form>
 
               </div>

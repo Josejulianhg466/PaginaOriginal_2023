@@ -52,7 +52,7 @@ include("../../templates/header.php");?>
 
     <div class="mb-3">
       <label for="txtID" class="form-label">ID:</label>
-      <input value="<?php echo $txtID; ?>" type="text"
+      <input readonly value="<?php echo $txtID; ?>" type="text"
         class="form-control" name="txtID" id="txtID" aria-describedby="helpId" placeholder="ID">
     </div>
    

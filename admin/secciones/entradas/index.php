@@ -71,9 +71,12 @@ include("../../templates/header.php"); ?>
                     <td>
                         <img width="50" src="../../../assets//img/about/<?php echo $registros['imagen'];?>" />
                     </td>
-                    <td> <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registros['ID']; ?>" role="button">Editar</a>
+                    <td> 
+                        <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registros['ID']; ?>" role="button">Editar</a>
                                 |
-                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registros['ID']; ?>" role="button">Eliminar</a></td>
+                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registros['ID']; ?>" role="button">Eliminar</a>
+                            
+                            </td>
                     
                 </tr>
                 <?php } ?>

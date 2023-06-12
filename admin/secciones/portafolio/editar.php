@@ -124,20 +124,21 @@ include("../../templates/header.php"); ?>
 
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen:</label>
-                <img width="50" src="../../../assets//img/portfolio/<?php echo $imagen; ?>" />
+                <img width="50" src="../../../assets/img/portfolio/<?php echo $imagen; ?>" />
                 <input type="file" class="form-control" name="imagen" id="imagen" placeholder="imagen" aria-describedby="fileHelpId">
 
             </div>
 
             <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción:</label>
-                <input type="text" class="form-control" value="<?php echo $descripcion; ?>" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripcion">
-            </div>
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <input type="text" class="form-control" value="<?php echo $descripcion; ?>" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripcion">
+</div>
 
-            <div class="mb-3">
-                <label for="cliente" class="form-label">Cliente:</label>
-                <input type="text" class="form-control" value="<?php echo $cliente; ?>" name="cliente" id="cliente" aria-describedby="helpId" placeholder="Cliente">
-            </div>
+<div class="mb-3">
+    <label for="cliente" class="form-label">Cliente:</label>
+    <input type="text" class="form-control" value="<?php echo $cliente; ?>" name="cliente" id="cliente" aria-describedby="helpId" placeholder="Cliente">
+</div>
+
 
             <div class="mb-3">
                 <label for="categoria" class="form-label">Categoria</label>
